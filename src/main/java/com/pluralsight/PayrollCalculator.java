@@ -30,7 +30,7 @@ public class PayrollCalculator {
 
         // Display results
         System.out.println("Payroll record for " + employeeName);
-        System.out.println("Gross pay: %.2f" + grossPay);
+        System.out.printf("Gross pay: $%.2f", grossPay);
 
     }
 }
