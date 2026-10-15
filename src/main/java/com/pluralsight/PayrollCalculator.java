@@ -30,7 +30,21 @@ public class PayrollCalculator {
 
         // Display results
         System.out.println("Payroll record for " + employeeName);
-        System.out.printf("Gross pay: $%.2f", grossPay);
+
+        // Bonus: Calculate overtime
+        if (hoursWorked > 40) {
+            float overtimeHours = hoursWorked - 40;
+            float overtimeRate = payRate * 1.5f;
+            float overtimePay = overtimeHours * overtimeRate;
+            grossPay = payRate * 40;
+            float grossAndOvertimePay = grossPay + overtimePay;
+
+            System.out.printf("Overtime pay: $%.2f", grossAndOvertimePay);
+
+        }
+        else {
+            System.out.printf("Gross pay: $%.2f", grossPay);
+        }
 
     }
 }
