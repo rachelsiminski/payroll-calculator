@@ -20,19 +20,19 @@ public class PayrollCalculator {
         String employeeName = scanner.nextLine();
 
         System.out.print("Enter the number of hours worked: ");
-        float hoursWorked = scanner.nextFloat();
+        double hoursWorked = scanner.nextDouble();
 
         System.out.print("Enter your rate of pay: ");
-        float payRate = scanner.nextFloat();
+        double payRate = scanner.nextDouble();
 
         // Calculate gross pay
-        float grossPay = hoursWorked * payRate;
+        // float grossPay = hoursWorked * payRate;
 
         // Display results
-        System.out.println("Payroll record for " + employeeName);
+        // System.out.println("Payroll record for " + employeeName);
 
         // Bonus: Calculate overtime
-        if (hoursWorked > 40) {
+        /* if (hoursWorked > 40) {
             float overtimeHours = hoursWorked - 40;
             float overtimeRate = payRate * 1.5f;
             float overtimePay = overtimeHours * overtimeRate;
@@ -44,7 +44,24 @@ public class PayrollCalculator {
         }
         else {
             System.out.printf("Gross pay: $%.2f", grossPay);
-        }
+        }*/
 
+    }
+
+    // calculateGrossPay(): Determine pay by hours worked and pay rate
+    public static double calculateGrossPay(double hours, double rate) {
+        double grossPay = hours * rate;
+
+        return grossPay;
+    }
+
+    // calcualteOvertimePay(): Determine overtime pay, Hours >40 = 1.5 * pay rate
+    public static double calculateOvertimePay(double hours, double rate) {
+        double hoursOverForty = hours - 40;
+        double overtimeRate = rate * 1.5;
+        double overtimePay = hoursOverForty * overtimeRate;
+        double overtimeTotal = overtimePay + (40 * rate);
+
+        return overtimeTotal;
     }
 }
