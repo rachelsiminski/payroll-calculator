@@ -1,0 +1,21 @@
+// Exercise 5: Payroll Calculator
+        // create a java application that prompts the user for their
+        //   - name
+        //   - hours worked (float)
+        //   - pay rate (float)
+        // calculate their gross pay
+
+Payroll calculator only has the main() method right now. I need to clean up the code
+and utilize other methods to improve readability and reusability.
+I need the payroll calculator to:
+   - Read user input for name, hours worked, and pay rate
+   - Calculate the gross pay for the employee
+   - Calculate overtime pay
+
+main() can continue to handle the user inputs, and I will need to make methods for
+calcualteGrossPay() and calculateOvertimePay()
+
+I am planning to use an if statement in main() to determine which method to call
+based on the hours worked. Example: 39 hours will call calculateGrossPay(), >40 will
+call calculateOvertimePay(). This way, the system is not printing out the gross pay
+everytime, only when it's appropriate.
