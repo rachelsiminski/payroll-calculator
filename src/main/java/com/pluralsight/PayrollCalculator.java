@@ -46,6 +46,17 @@ public class PayrollCalculator {
             System.out.printf("Gross pay: $%.2f", grossPay);
         }*/
 
+        if (hoursWorked <= 40) {
+            System.out.println("Payroll record for: " + employeeName);
+            System.out.println("Hours worked: " + hoursWorked);
+            System.out.printf("Total pay: $%.2f", calculateGrossPay(hoursWorked, payRate));
+        }
+        else {
+            System.out.println("Payroll record for: " + employeeName);
+            System.out.println("Hours worked: " + hoursWorked);
+            System.out.println("Overtime hours: " + (hoursWorked - 40));
+            System.out.printf("Total pay: $%.2f", calculateOvertimePay(hoursWorked, payRate));
+        }
     }
 
     // calculateGrossPay(): Determine pay by hours worked and pay rate
